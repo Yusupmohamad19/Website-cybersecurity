@@ -11,28 +11,42 @@
             margin: 50px;
             background-color: #f1f1f1;
             color: #333;
+            overflow-x: hidden;
         }
+        
         .hidden {
             display: none;
         }
-        .btn {
-            background-color: #FF5722; /* Shopee orange */
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.2s ease;
+
+        /* Animasi untuk logo */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
         }
-        .btn:hover {
-            background-color: #FF3D00;
-            transform: translateY(-2px);
+
+        .shopee-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite;
         }
-        .btn:active {
-            transform: translateY(2px);
+
+        /* Animasi untuk voucher */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .voucher-container {
             background-color: white;
             color: #333;
@@ -44,44 +58,82 @@
             text-align: center;
             margin-top: 30px;
             display: inline-block;
+            animation: fadeIn 1s ease-out;
         }
+
+        /* Animasi tombol */
+        @keyframes buttonHover {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn {
+            background-color: #FF5722;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: buttonHover 0.5s ease infinite;
+        }
+
+        .btn:hover {
+            background-color: #FF3D00;
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
         .voucher-header {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 15px;
-            color: #FF5722; /* Shopee orange */
+            color: #FF5722;
         }
+
         .voucher-amount {
             font-size: 36px;
             font-weight: bold;
             color: #FFD700;
             margin: 10px 0;
         }
+
         .warning-container {
             display: none;
             color: red;
             font-weight: bold;
             margin-top: 20px;
         }
+
         .warning-container p {
             font-size: 18px;
             color: #D32F2F;
         }
+
         .icon {
             font-size: 40px;
             margin-bottom: 20px;
             color: #FFD700;
         }
-        .shopee-logo {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 20px;
-        }
+
     </style>
 </head>
 <body>
     <div id="main-content">
-   <img src="shopee-bag-logo-free-transparent-icon-17.png" alt="Shopee Logo" class="shopee-logo">
+        <!-- Shopee logo dengan animasi bounce -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Shopee_logo_2015.svg" alt="Shopee Logo" class="shopee-logo">
+        
         <h1>Selamat! Anda Berhak Mendapatkan Voucher Rp100.000</h1>
         <p>Dapatkan voucher Anda dengan mengklik tombol di bawah.</p>
         
