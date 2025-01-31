@@ -9,32 +9,92 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
+            background-color: #f5f5f5;
+            color: #333;
         }
         .hidden {
+            display: none;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(2px);
+        }
+        .voucher-container {
+            background: linear-gradient(145deg, #FF6F61, #D84B34);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+            display: inline-block;
+        }
+        .voucher-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .voucher-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #FFD700;
+            margin: 10px 0;
+        }
+        .warning-container {
             display: none;
             color: red;
             font-weight: bold;
             margin-top: 20px;
         }
-        .btn {
-            background-color: blue;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
+        .warning-container p {
+            font-size: 18px;
+            color: #D32F2F;
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #FFD700;
         }
     </style>
 </head>
 <body>
-    <h1>Selamat! Anda berhak mendapatkan Voucher Rp100.000</h1>
-    <p>Klik tombol di bawah untuk mengklaim voucher Anda.</p>
-    <button class="btn" onclick="showWarning()">Klaim Sekarang</button>
-    <p id="warning" class="hidden">PERINGATAN: Ini adalah simulasi phishing! Jangan pernah mengklik tautan mencurigakan atau memasukkan data pribadi Anda di situs yang tidak terpercaya.</p>
+    <div id="main-content">
+        <h1>Selamat! Anda Berhak Mendapatkan Voucher Rp100.000</h1>
+        <p>Dapatkan voucher Anda dengan mengklik tombol di bawah.</p>
+        
+        <div class="voucher-container">
+            <div class="voucher-header">Voucher Spesial</div>
+            <div class="voucher-amount">Rp100.000</div>
+            <div class="icon">🎉</div>
+            <button class="btn" onclick="showWarning()">Klaim Sekarang</button>
+        </div>
+    </div>
+    
+    <div id="warning-content" class="warning-container">
+        <h1>PERINGATAN!</h1>
+        <p>Ini adalah simulasi phishing! Jangan pernah mengklik tautan mencurigakan atau memasukkan data pribadi Anda di situs yang tidak terpercaya.</p>
+    </div>
 
     <script>
         function showWarning() {
-            document.getElementById('warning').style.display = 'block';
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('warning-content').style.display = 'block';
         }
     </script>
 </body>
