@@ -1,92 +1,69 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sosialisasi Keamanan Siber - Peringatan Phishing</title>
+    <title>Login Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8d7da;
-            color: #721c24;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            text-align: center;
+            background-color: #f4f4f4;
         }
         .container {
-            max-width: 600px;
+            background: white;
             padding: 20px;
-            border: 2px solid #f5c6cb;
-            border-radius: 8px;
-            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        p {
-            font-size: 1.2em;
+        input {
+            display: block;
+            width: 100%;
             margin: 10px 0;
-            animation: slideIn 2s ease-in-out;
+            padding: 10px;
         }
-        .alert {
-            font-weight: bold;
-            color: #dc3545;
-            animation: bounce 1.5s infinite;
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
         }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+        .result {
+            margin-top: 20px;
+            background: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Peringatan: Ini adalah Simulasi Website Phishing</h1>
-        <p class="alert">Website ini sengaja dirancang untuk tujuan edukasi guna meningkatkan kesadaran tentang ancaman phishing.</p>
-        <p>Website phishing bertujuan mencuri informasi sensitif seperti nama pengguna, kata sandi, dan detail keuangan dengan berpura-pura menjadi platform yang sah.</p>
-        <p>Selalu periksa URL dan pastikan website aman sebelum memberikan informasi pribadi.</p>
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="showData()">Login</button>
+        <div class="result" id="result"></div>
     </div>
+
+    <script>
+        function showData() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username && password) {
+                document.getElementById("result").style.display = "block";
+                document.getElementById("result").innerHTML = "<strong>Username:</strong> " + username + "<br><strong>Password:</strong> " + password;
+            } else {
+                alert("Harap isi username dan password");
+            }
+        }
+    </script>
 </body>
 </html>
